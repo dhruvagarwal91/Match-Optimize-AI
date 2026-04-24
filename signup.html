@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Match Optimize AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('45883.png') center/cover no-repeat;
+            height: 100vh; display: flex; justify-content: center; align-items: center; color: white;
+        }
+        .card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40px; width: 90%; max-width: 400px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        h2 { font-size: 1.5rem; margin-bottom: 20px; letter-spacing: 2px; }
+        input { width: 100%; padding: 15px; margin-bottom: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; }
+        .btn { width: 100%; padding: 15px; background: white; color: black; border: none; font-weight: bold; cursor: pointer; text-decoration: none; display: block; }
+        .link { margin-top: 15px; font-size: 0.8rem; color: #888; }
+        a { color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Create Account</h2>
+        <input type="text" id="email" placeholder="Email Address">
+        <input type="password" id="password" placeholder="Create Password">
+        <button class="btn" onclick="signUp()">Register</button>
+        <div class="link">Already have an account? <a href="login.html">Login</a></div>
+    </div>
+
+    <script>
+        function signUp() {
+            const email = document.getElementById('email').value;
+            alert("Ready to connect to database! Email recorded: " + email);
+            // This is where we will add the Firebase code next to actually SAVE it.
+        }
+    </script>
+</body>
+</html>
