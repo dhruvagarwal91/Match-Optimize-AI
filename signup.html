@@ -28,10 +28,43 @@
     </div>
 
     <script>
-        function signUp() {
-            const email = document.getElementById('email').value;
-            alert("Ready to connect to database! Email recorded: " + email);
-            // This is where we will add the Firebase code next to actually SAVE it.
+        <script type="module">
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+  // Your unique Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCsJcBNEW5_k120ED5aH7B56W_HpXfG47g",
+    authDomain: "match-optimize-ai-a6cf4.firebaseapp.com",
+    projectId: "match-optimize-ai-a6cf4",
+    storageBucket: "match-optimize-ai-a6cf4.firebasestorage.app",
+    messagingSenderId: "208651975670",
+    appId: "1:208651975670:web:738da4f24a0d5ed455e5d7",
+    measurementId: "G-R0ZNYETVSJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // The function that runs when they click 'Register'
+  window.signUp = function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Success! Your AI journey begins.");
+        window.location.href = "index.html"; // Takes them back to home after success
+      })
+      .catch((error) => {
+        alert("Error: " + error.message);
+      });
+  } 
+        
+</script>
+ where we will add the Firebase code next to actually SAVE it.
         }
     </script>
 </body>
